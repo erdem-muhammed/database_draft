@@ -12,6 +12,24 @@ $server_user = "root";
 $server_pass = "";
 $database_name = "final_project";
 
+
+if(empty($_POST["vorname"]) || empty($_POST["nachname"]) ||
+empty($_POST["email"]) || empty($_POST["pass"]) || empty($_POST["pass2"]))
+{
+    //es gibt ein Problem
+    return;
+}
+
+$vorname = $_POST["name"];
+$nachname = $_POST["surname"];
+$email = $_POST["email"];
+$pass = $_POST["password"];
+$phone_number = $_POST["phoneNumber"];
+
+?>
+
+
+
 $conn = new mysqli($server_name, $server_user, $server_pass, $database_name);
 //check Connection
 if ($conn->connect_error) {
