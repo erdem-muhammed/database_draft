@@ -13,20 +13,19 @@ $server_pass = "";
 $database_name = "final_project";
 
 
-if(empty($_POST["vorname"]) || empty($_POST["nachname"]) ||
-empty($_POST["email"]) || empty($_POST["pass"]) || empty($_POST["pass2"]))
+if(empty($_POST["name"]) || empty($_POST["surname"]) ||
+empty($_POST["email"]) || empty($_POST["password"] ))
 {
-    //es gibt ein Problem
     return;
 }
 
-$vorname = $_POST["name"];
-$nachname = $_POST["surname"];
+$name = $_POST["name"];
+$surname = $_POST["surname"];
 $email = $_POST["email"];
 $pass = $_POST["password"];
 $phone_number = $_POST["phoneNumber"];
 
-?>
+echo "kurulum";
 
 
 
@@ -35,13 +34,13 @@ $conn = new mysqli($server_name, $server_user, $server_pass, $database_name);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
-  $sql = "INSERT INTO register_info (`id`, `name`, `surname`, `email`, `password`, `phone_number`) VALUES ('3', 'maria', 'müller', 'maria@test.com', '123456789', '123123123')";
+  $sql = "INSERT INTO register_info (`name`, `surname`, `email`, `password`, `phone_number`) VALUES ( '$name', '$surname', '$email', '$pass', '$phone_number')";
+  echo "query gönderiliyor";
   if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
-  
   $conn->close();
   
 ?>
