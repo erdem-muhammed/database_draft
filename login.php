@@ -31,6 +31,8 @@ if($query == "POST")
       $resultcontent = $query->fetch_assoc();
       
       if($resultcontent["password"] == $password) // if the password is correct too
+      $token = random_int(1000, 9999);
+      $query = "UPDATE register_info SET token = "
   }
 
 
