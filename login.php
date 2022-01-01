@@ -34,7 +34,8 @@ if($query == "POST")
       $token = random_int(1000, 9999);
       $query = "UPDATE register_info SET token = " . $token . " WHERE id = " . $resultcontent["id"];
 
-      
+      $result2 = $conn->query($query);
+      if($result2 === true)
   }
 
 
