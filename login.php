@@ -49,15 +49,14 @@ if($query == "POST")
           )));
       }
   }
-  else
-  {
-      
-  }
-
-
-
-
 }
+else
+{
+    exit(json_encode(array(
+        "successfull" => "0"
+    )));
+}
+
 
 
 
