@@ -32,7 +32,9 @@ if($query == "POST")
       
       if($resultcontent["password"] == $password) // if the password is correct too
       $token = random_int(1000, 9999);
-      $query = "UPDATE register_info SET token = "
+      $query = "UPDATE register_info SET token = " . $token . " WHERE id = " . $resultcontent["id"];
+
+      
   }
 
 
