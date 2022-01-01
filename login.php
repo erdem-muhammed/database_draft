@@ -17,6 +17,8 @@ if($query == "POST")
   $email = $_POST["email"];
   $password = $_POST["password"];
 
+  $query = "SELECT * FROM register_info WHERE email= '" . $email . "'";
+
 
 
 }
