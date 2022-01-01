@@ -42,7 +42,18 @@ if($query == "POST")
               "successfull" => "1"
           )));
       }
+      else
+      {
+          exit(json_encode(array(
+              "successfull" => "0"
+          )));
+      }
   }
+  else
+  {
+      
+  }
+
 
 
 
