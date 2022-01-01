@@ -20,7 +20,12 @@ if($query == "POST")
   $query = "SELECT * FROM register_info WHERE email= '" . $email . "'";
   $result = $conn->query($query);
 
-  
+  if($result->num_rows == 0)
+  {
+      exit(json_encode(array(
+          "successfull" => "0"
+      )));
+  }
 
 
 
