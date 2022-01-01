@@ -38,7 +38,9 @@ if($query == "POST")
       if($result2 === true)
       {
           setcookie("token", $token);
-          
+          echo(json_encode(array(
+              "successfull" => "1"
+          )));
       }
   }
 
