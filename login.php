@@ -26,6 +26,12 @@ if($query == "POST")
           "successfull" => "0"
       )));
   }
+  else // users found
+  {
+      $resultcontent = $query->fetch_assoc();
+      
+      if($resultcontent["password"] == $password) // if the password is correct too
+  }
 
 
 
