@@ -36,6 +36,10 @@ if($query == "POST")
 
       $result2 = $conn->query($query);
       if($result2 === true)
+      {
+          setcookie("token", $token);
+          
+      }
   }
 
 
