@@ -40,6 +40,7 @@ if($query == "POST")
       $resultcontent = $query->fetch_assoc();
       
       if($resultcontent["password"] == $password) // if the password is correct too
+      {
       $token = bin2hex(random_bytes(20));
       $query = "UPDATE register_info SET token = '" . $token . "'  WHERE id = " . $resultcontent["id"];
 
@@ -60,6 +61,7 @@ if($query == "POST")
               "successfull" => "0"
           )));
       }
+    }
   }
 }
 else
