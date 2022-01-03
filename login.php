@@ -40,7 +40,7 @@ if($query == "POST")
       $resultcontent = $query->fetch_assoc();
       
       if($resultcontent["password"] == $password) // if the password is correct too
-      $token = random_int(1000, 9999);
+      $token = bin2hex(random_bytes(20));
       $query = "UPDATE register_info SET token = " . $token . " WHERE id = " . $resultcontent["id"];
 
       $result2 = $conn->query($query);
