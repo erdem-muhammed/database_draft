@@ -48,7 +48,10 @@ if($query == "POST")
       {
           setcookie("token", $token);
           echo(json_encode(array(
-              "successfull" => "1"
+              "successfull" => "1",
+              "name"        => "admin",
+              "id"          => "$resultcontent["id"],
+              "token"       => $token
           )));
       }
       else
