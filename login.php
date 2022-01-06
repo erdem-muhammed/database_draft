@@ -54,7 +54,7 @@ if($query == "POST")
           echo(json_encode(array(
               "successfull" => "1",
               "name"        => "admin",
-              "id"          => "$resultcontent["id"],
+              "id"          => $resultcontent["id"],
               "token"       => $token
           )));
       }
