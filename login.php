@@ -14,15 +14,15 @@ if (isset($_SERVER['HTTP_ORIGIN']))
 include("register.php");
 
 
-$query = $_SERVER["REQUEST_METHOD"];
+$sorgu = $_SERVER["REQUEST_METHOD"];
 
-if($query == "POST")
+if($sorgu == "POST")
 {
   // invalid post query
   if(empty($_POST["email"]) || empty($_POST["password"]))
   {
       exit(json_encode(array(
-          "successfull" => "0"
+          "successfull" => "3"
       )));
   }
    
@@ -35,12 +35,12 @@ if($query == "POST")
   if($result->num_rows == 0)
   {
       exit(json_encode(array(
-          "successfull" => "0"
+          "successfull" => "2"
       )));
   }
   else // users found
   {
-      $resultcontent = $query->fetch_assoc();
+      $resultcontent = $result->fetch_assoc();
       
       if($resultcontent["password"] == $password) // if the password is correct too
       {
